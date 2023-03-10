@@ -13,7 +13,7 @@
  var HTTP_PORT = process.env.PORT || 8080;
  var express = require("express");
  var app = express();
- const colleged = require('./modules/collegedata.js');
+ const colleged = require('./modules/collegeData.js');
  
  app.use(express.static("public"));
  
