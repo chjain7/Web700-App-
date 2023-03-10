@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        th, td {
+          border-style:solid;
+          border-color: #96D4D4;
+          border-style: groove;
+        }
+        </style>
+        <title>WEB700</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+        <link rel="stylesheet" type="text/css" href="/Css/theme.css">
+      </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Chahat Jain</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="/htmlDemo">Html Demo</a></li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="/students/add">Add Student</a>
+                   </li>
+                  </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/students">Students</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/tas">Teaching Assistants</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <main class="col-md-12">
+                    <section>
+                        <h2>Tables</h2>
+                        <table border="1px Solid">
+                            <caption>Last 3 months weather in canada</caption>
+                            <thead>
+                              <tr>
+                                <th colspan="5px">November</th>
+                                <th colspan="6px">December</th>
+                                <th colspan="10px">January</th>
+                             
+                              </tr>
+                            </thead>
+                          
+                            <tbody>
+                              <tr>
+                                <td rowspan = "1px" colspan="2px" border-color="#96D4D4";>Max</td>
+                                <td rowspan = "1px" colspan="2px">Min</td>
+                                <td rowspan = "1px" colspan="2px">Avg</td>
+                                <td rowspan = "1px" colspan="2px">Max</td>
+                                <td rowspan = "1px" colspan="2px">Min</td>
+                                <td rowspan = "1px" colspan="2px">Avg</td>
+                                <td rowspan = "1px" colspan="5px">Max </td>
+                                <td rowspan = "1px" colspan="1px">Min</td>
+                                <td rowspan = "1px" colspan="2px">Avg</td>
+                               
+                              </tr>
+                              <tr>
+                                <td rowspan = "1px" colspan="2px">6 C</td>
+                                <td rowspan = "1px" colspan="2px">-9 C</td>
+                                <td rowspan = "1px" colspan="2px">-10 C</td>
+                                <td rowspan = "1px" colspan="2px">7 C</td>
+                                <td rowspan = "1px" colspan="2px">-14 C</td>
+                                <td rowspan = "1px" colspan="2px">-12 C</td>
+                                <td rowspan = "1px" colspan="5px">3 C</td>
+                                <td rowspan = "1px" colspan="1px">-21 C</td>
+                                <td rowspan = "1px" colspan="2px">-14 C</td>
+                              </tr>
+                              
+                            </tbody>
+                              
+                            <tfoot>
+                              <tr>
+                                <th colspan= "21px">January was the coldest month</th>
+                              </tr>
+                            </tfoot>
+                          </table>
+                          
+                          <table>
+                            <caption>Expected  weather in Next 3 months in canada</caption>
+                            <thead>
+                              <tr>
+                                <th colspan="5px">February</th>
+                                <th colspan="6px">March</th>
+                                <th colspan="10px">April</th>
+                             
+                              </tr>
+                            </thead>
+                          
+                            <tbody>
+                                <tr>
+                                    <td rowspan = "1px" colspan="2px" ;>Max</td>
+                                    <td rowspan = "1px" colspan="2px">Min</td>
+                                    <td rowspan = "1px" colspan="2px">Avg</td>
+                                    <td rowspan = "1px" colspan="2px">Max</td>
+                                    <td rowspan = "1px" colspan="2px">Min</td>
+                                    <td rowspan = "1px" colspan="2px">Avg</td>
+                                    <td rowspan = "1px" colspan="5px">Max </td>
+                                    <td rowspan = "1px" colspan="1px">Min</td>
+                                    <td rowspan = "1px" colspan="2px">Avg</td>
+                                   
+                                  </tr>
+                                  <tr>
+                                    <td rowspan = "1px" colspan="2px">-10 C</td>
+                                    <td rowspan = "1px" colspan="2px">-21 C</td>
+                                    <td rowspan = "1px" colspan="2px">-7 C</td>
+                                    <td rowspan = "1px" colspan="2px">3 C</td>
+                                    <td rowspan = "1px" colspan="2px">-7 C</td>
+                                    <td rowspan = "1px" colspan="2px">2 C</td>
+                                    <td rowspan = "1px" colspan="5px">11 C</td>
+                                    <td rowspan = "1px" colspan="1px">6 C</td>
+                                    <td rowspan = "1px" colspan="2px">3 C</td>
+                                  </tr>
+                                  
+                                </tbody>
+                                  
+                                <tfoot>
+                                  <tr>
+                                    <th colspan= "21px">April will be the warmest month</th>
+                                  </tr>
+                                </tfoot>
+                          </table>
+                          <p>The above mentiones tables gives information about the Average temperature of last 3 months.</br>
+                               Also informing about the maximum and minimum temperatures.<br>The other table is implying what temperatues we can have in the next 3 months.</p>
+                         </section>
+                         <section>
+                            <h2>Lists</h2>
+                            <h2>Examples of Endangered Animals</h2>
+                            <ul>
+                              <li>
+                                <h3>Amur Leopard</h3>
+                                <ol>
+                                  <li>Endangered species found in Russia</li>
+                                  <li>Only about 100 left in the wild</li>
+                                  <li>Hunted for their fur and habitat loss due to logging and development</li>
+                                </ol>
+                              </li>
+                              <li>
+                                <h3>Sumatran Elephant</h3>
+                                <ol>
+                                  <li>Endangered species found in Indonesia</li>
+                                  <li>Threatened by habitat loss due to deforestation and human encroachment</li>
+                                  <li>Only around 2000-3000 left in the wild</li>
+                                </ol>
+                              </li>
+                              <li>
+                                <h3>Vaquita</h3>
+                                <ol>
+                                  <li>Critically endangered species of porpoise found in Mexico</li>
+                                  <li>Only about 10 left in the wild</li>
+                                  <li>Threatened by accidental entanglement in fishing nets</li>
+                                </ol>
+                              </li>
+                              <li>
+                                <h3>Mountain Gorilla</h3>
+                                <ol>
+                                  <li>Endangered species found in the forests of central Africa</li>
+                                  <li>Only around 1000 left in the wild</li>
+                                  <li>Threatened by habitat loss and poaching</li>
+                                </ol>
+                              </li>
+                              <li>
+                                <h3>Sea Otter</h3>
+                                <ol>
+                                  <li>Endangered species found along the coast of the northern Pacific Ocean</li>
+                                  <li>Threatened by hunting for their fur and oil spills</li>
+                                  <li>Play a crucial role in the health of kelp forests by controlling sea urchin populations</li>
+                                </ol>
+                              </li>
+                            </ul>
+                            <p>This section provides examples of endangered animals and their current situation. It emphasizes the importance of conservation efforts to protect these animals and their habitats from further harm and possible extinction.</p>
+                         </section>
+                         <section>
+                            <h1>Images</h1>
+                            <h2>Outdoor Adventures</h2>
+                            <div class="image-gallery">
+                              <a href="https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg" alt="Snowboarder in Halfpipe" width="300" height="200" style="border: 1px solid black">
+                              </a>
+                              <a href="https://explorersweb.com/climber-dies-on-ama-dablam/">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Ama-Dablam-Rock-Lydia-Bradey.jpg" alt="Climber on Ama Dablam" width="300" height="200" style="border: 1px solid black">
+                              </a>
+                              <a href="https://upload.wikimedia.org/wikipedia/commons/7/7a/Kayaker_Paddling.jpg">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Kayakhtml.jpg" alt="Kayaker Paddling" width="300" height="200" style="border: 1px solid black">
+                              </a>
+                            </div>
+                            <p>Experience the thrill of outdoor adventures with our collection of images featuring snowboarding, mountain climbing, and kayaking. These images capture the excitement and beauty of pushing your limits in the great outdoors. Whether you're an adrenaline junkie or simply love the natural beauty of our world, these images are sure to inspire your next outdoor adventure.</p>
+                          </section>
+                          <section>
+                            <h1>Audio</h1>
+                            <h2>Sample Audio</h2>
+                            <audio controls>
+                                <source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-audio.mp3" type="audio/mpeg">
+                             </audio>
+                            <p>Take a break from your day and enjoy our sample audio! This relaxing and soothing music is the perfect way to unwind and destress. Whether you're at work or at home, just press play and let the music take you away.</p>
+                           </section>
+                           <section>
+                            <h1>Video</h1>
+                            <h2>Sample Video</h2>
+                                <video controls>
+                                    <source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.mp4" type="video/mp4">
+                                   
+                                   
+                                </video>
+                                <p>This video showcases ratation of earth on its own axis.</p>
+
+                           </section>
+                </main>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

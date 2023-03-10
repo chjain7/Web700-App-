@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+html {
+    background-color: rgb(243, 240, 240) !important; 
+    height: 100%;
+   
+}
+body {
+    background: rgb(249, 247, 247) !important;
+    font-family: 'Muli', sans-serif;
+    color: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    font-weight: 400;
+    letter-spacing: -.003em;
+    font-size: 20px;
+    
+  }
+.container{
+margin-top: 45px;
+  }
+.navbar  {
+    background: linear-gradient( to bottom, rgb(204, 182, 182), #ffc) !important;
+    border-radius: 0px 0px 0px 0px;
+    background-repeat: no-repeat;
+}
+.navbar:hover  {
+    color: rgb(11, 0, 128);
+}
+.nav-link{
+  color: rgb(11, 0, 128);
+    
+}
+.navbar-brand{
+    text-shadow: 2px 2px rgb(243, 240, 240) !important;
+}
+   
+.navbar-light{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 20px;
+   
+    color: rgba(0, 0, 0, 0.8);
+}
+h1 {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 38px;
+    line-height: 1.15;
+    letter-spacing: -.02em;
+    color: rgba(0, 0, 0, 0.8);
+    -webkit-font-smoothing: antialiased;
+  }
+h2 {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+   
+    font-style: normal;
+    font-size: 1em;
+    color: rgb(87, 87, 163) !important;
+    margin-bottom: .3em;
+    text-decoration: underline;
+  }
+  
+  table {
+    margin: .3em;
+    width: 290px;
+  }
+  
+  th {
+    padding: .2em;
+  }
+  
+  td {
+    padding-left: .5em;
+    padding-right: .5em;
+    border: 1px solid #900;
+    background-color: #ffc;
+  }
+  a:hover{
+    color: #900;
+  }
+
+  .btn-primary {
+    color: #fff;
+    background-color: #91a5ba;
+    /* border-color: #007bff; */
+    }
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #e48f2e;
+        /* border-color: #007bff; */
+        }
+  p{
+    margin-top: 20px;
+    color: navy;
+   
+  }
+  legend{
+    text-align: center;
+    margin-top: 15px;
+  }
