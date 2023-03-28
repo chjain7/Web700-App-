@@ -126,7 +126,7 @@ app.get("/courses", (req, res) => {
  
 app.get("/student/:num", (req, res) => {
   // Call the getStudentByNum function with the "num" parameter from the URL
-  getStudentByNum(req.params.num).then((result) => {
+  colleged.getStudentByNum(req.params.num).then((result) => {
       // Return the result as a JSON response
       res.render("student", { student: result }); 
   }).catch((err) => {
