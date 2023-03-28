@@ -124,16 +124,15 @@ app.get("/courses", (req, res) => {
 });
 
  
-app.get("/student/:num",(req,res)=>{
-  var num = req.params.num;
-  var numValue = parseInt(num);
-  colleged.getStudentByNum(numValue) .then(data => {
-    res.render("Student", { student: data });
-  })
-  .catch(err => {
-    res.render("error", { message: err.message });
-  });
-
+app.get("/student/:num", (req, res) => {
+  // Call the getStudentByNum function with the "num" parameter from the URL
+  getStudentByNum(req.params.num).then((result) => {
+      // Return the result as a JSON response
+      res.render("student", { student: result }); 
+  }).catch((err) => {
+      // If there is an error, return a JSON response with a message of "no results"
+      return res.json({message:"no results"})
+  }); 
 });
 
  app.get("/course/:id", (req, res) => {
