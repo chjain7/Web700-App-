@@ -182,7 +182,6 @@ module.exports = {
     getCourses,
     getAllStudents,
     getStudentsByCourse,
-    getStudentByNum,
     getTAs,
     addStudents,
     getCourseById,
