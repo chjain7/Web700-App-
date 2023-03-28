@@ -3,9 +3,8 @@
     <head>
         <title>WEB700</title>
         <meta charset="UTF-8" />
-        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-        <link rel="stylesheet" type="text/css" href="/Css/theme.css">   
+        <link rel="stylesheet" type="text/css" href="/Css/theme.css">
     </head>
 
     <body>
@@ -17,36 +16,21 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="/about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/htmlDemo">Html Demo</a></li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="/students/add">Add Student</a>
-                     </li>
+                    {{#navLink "/"}}Home{{/navLink}}
+                   {{#navLink "/about"}}About{{/navLink}}
+                   {{#navLink "/htmlDemo"}}HTML DEMO{{/navLink}}
+                 {{#navLink "/students/add"}} Add Student{{/navLink}}
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="/students">Students</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/tas">Teaching Assistants</a></li>
+                
                     <li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li>
                 </ul>
             </div>
         </nav>
 
         <div class="container">
-            <div class="row">
-                <main class="col-md-12">
-                    <!-- Start your code here -->
-                  
-                    <header>
-                        <h1 style="font-size: 50px">Welcome to My Page</h1>
-                      </header>
-                      <section>
-                        <h2>Who Am I?</h2>
-                        <p>My name is Chahat Jain, and I am currently enrolled in BTT (Web700) program  at Seneca College. <br>My student ID is 177139219.<br> I am passionate about IT industry and am constantly seeking new ways to learn and grow in this field.</p>
-                      </section>
-                    <!-- End your code here  -->
-                </main>
-            </div>
+           {{{body}}}
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

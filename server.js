@@ -12,48 +12,143 @@
 
  var HTTP_PORT = process.env.PORT || 8080;
  var express = require("express");
+ const exphbs = require('express-handlebars')
+ const handlebars = require('handlebars');
+
+
+
  var app = express();
  const colleged = require('./modules/collegeData.js');
  
  app.use(express.static("public"));
+
+
+ handlebars.registerHelper('ifEqual', function(a, b, options) {
+  if (a === b) {
+    return options.fn(this);
+  } else {
+    return options.inverse(this);
+  }
+});
+
+
+app.use(function (req, res, next) {
+  let route = req.path.substring(1);
+  app.locals.activeRoute = "/" + (isNaN(route.split('/')[1])
+    ? route.replace(/\/(?!.*)/, "")
+    : route.replace(/\/(.*)/, ""));
+  next();
+});
+
+
+
+
  
  app.use(express.urlencoded({ extended: true }));
+ // Configure express-handlebars
+ app.engine(".hbs", exphbs.engine({ extname: ".hbs" ,helpers: {
+  navLink: function (url, options) {
+    return (
+      '<li' +
+      ((url == app.locals.activeRoute)
+        ? ' class="nav-item active" '
+        : ' class="nav-item" ') +
+      '><a class="nav-link" href="' + url + '">' +
+      options.fn(this) + '</a></li>'
+    );
+  },
+  equal: function (lvalue, rvalue, options) {
+    if (arguments.length < 3) {
+      throw new Error("Handlebars Helper equal needs 2 parameters");
+    }
+    if (lvalue != rvalue) {
+      return options.inverse(this);
+    } else {
+      return options.fn(this);
+    }
+  }
+}}));
+ app.set("view engine", ".hbs");
 
 
- app.get("/students",(req,res)=>{
-     var course=req.query.course
-     if (typeof course !== 'undefined') {
+//  app.get("/students",(req,res)=>{
+//      var course=req.query.course
+//      if (typeof course !== 'undefined') {
         
-         colleged.getStudentsByCourse(course).then(studentData => {
-             res.send(studentData);
-           });
-       } else {
-        colleged.getAllStudents().then(studentData => {
-             res.send(studentData);
-           });
-       }
- });
+//          colleged.getStudentsByCourse(course).then(studentData => {
+//              res.send(studentData);
+//            });
+//        } else {
+//         colleged.getAllStudents().then(studentData => {
+//              res.send(studentData);
+//            });
+//        }
+//  });
+
+app.get("/students",(req,res)=>{
+  var course=req.query.course
+  if (typeof course !== 'undefined') {
+     
+      colleged.getStudentsByCourse(course).then(studentData => {
+        res.render("students", {students: studentData});
+        });
+    } else {
+      colleged.getAllStudents().then(studentData => {
+        res.render("students", {students: studentData});
+        });
+    }
+});
+
+
  
- app.get("/tas",(req,res)=>{
-    colleged.getTAs().then(taData => {
-         res.send(taData);
-       });
- });
+//  app.get("/tas",(req,res)=>{
+//     colleged.getTAs().then(taData => {
+//          res.send(taData);
+//        });
+//  });
  
- app.get("/courses",(req,res)=>{
-    colleged.getCourses().then(courseData => {
-         res.send(courseData);
-       });
- });
+//  app.get("/courses",(req,res)=>{
+//     colleged.getCourses().then(courseData => {
+//          res.send(courseData);
+//        });
+//  });
+
+app.get("/courses", (req, res) => {
+  colleged.getCourses()
+    .then(data => {
+      res.render("courses", {courses: data});
+    })
+    .catch(err => {
+      res.render("courses", { message: "no results" });
+    });
+});
+
  
- app.get("/student/:num",(req,res)=>{
-     var num = req.params.num;
-     var numValue = parseInt(num);
-     colleged.getStudentByNum(numValue).then(studentData => {
-         res.send(studentData);
-       });
-   
- });
+app.get("/student/:num",(req,res)=>{
+  var num = req.params.num;
+  var numValue = parseInt(num);
+  colleged.getStudentByNum(numValue) .then(data => {
+    res.render("Student", { student: data });
+  })
+  .catch(err => {
+    res.render("error", { message: err.message });
+  });
+
+});
+
+ app.get("/course/:id", (req, res) => {
+  var num = req.params.num;
+  var numValue = parseInt(num);
+  colleged.getCourseById(numValue)
+    .then(data => {
+      res.render("course", { course: data });
+    })
+    .catch(err => {
+      res.render("error", { message: err.message });
+    });
+});
+
+
  app.post('/students/add',  (req, res) => {
   colleged.addStudents(req.body).then(studentData => {
       res.redirect('/students');
@@ -61,19 +156,39 @@
 });
 
  app.get("/", (req, res) => {
-    res.sendFile(__dirname + '/views/home.html');
+    res.render(__dirname + '/views/home.hbs');
 });
 
 app.get("/about", (req, res) => {
-    res.sendFile(__dirname + '/views/about.html');
+    res.render(__dirname + '/views/about.hbs');
 });
 
 app.get("/htmlDemo", (req, res) => {
-    res.sendFile(__dirname + '/views/htmlDemo.html');
+    res.render(__dirname + '/views/htmlDemo.hbs');
 });
+
 app.get("/students/add", (req, res) => {
-  res.sendFile(__dirname + '/views/addStudent.html');
+  res.render(__dirname + '/views/addStudent.hbs')
 });
+
+app.post('/students/add',  (req, res) => {
+  colleged.addStudents(req.body).then(studentData => {
+      res.redirect('/students');
+    });
+});
+
+app.post("/student/update", (req, res) => {
+  colleged.updateStudent(req.body)
+    .then(() => {
+      res.redirect("/students");
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error updating student");
+    });
+});
+
+
  app.get('*', function(req, res){
      res.status(404).send('PAGE NOT FOUND!!!!');
    });
