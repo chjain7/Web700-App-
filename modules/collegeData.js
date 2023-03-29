@@ -116,29 +116,29 @@ const addStudents = function(StudentDataFromFile){
 const getCourseById = (id) => {
     return new Promise(async function(Resolve, Reject) { 
          try{
-              // Reject if the id Parameter is undefined
+             
               if(id == undefined) {
-                   Reject("Id parameter is undefined")
+                   Reject("Id parameter Not present")
               }
 
               // Filter the course to only whos courseId = id
               let filter = (!dataCollection || dataCollection.courses == undefined)? [] : dataCollection.courses.filter(x => x.courseId == id);
               
-               // Reject if the 'dataCollection' variable is not properly initialized
+              
               if(!dataCollection || dataCollection.courses == undefined) {
-                   Reject("DataCollection Object is not initialized")
+                   Reject("No Object is not initialized")
               }
 
-              // Reject if there are no any courses in the 'courses' array
+            
               if(filter.length == 0) {
                    Reject("query returned 0 results")
               }
-               // Resolve with Filter Data
+             
               else{
                    Resolve(filter[0])
               }
          }catch (err){
-              // Reject if there any error
+              
               Reject(err.message)
          }
     })
@@ -147,9 +147,9 @@ const getCourseById = (id) => {
 const updateStudent = (data) => {
     return new Promise(async function(Resolve, Reject) { 
          try{
-              // Reject if the 'dataCollection' variable is not properly initialized
+             
               if(!dataCollection || dataCollection.students == undefined) {
-                   Reject("DataCollection Object not initialized")
+                   Reject("Student does not exist")
               }
               
               if(data.TA) {
@@ -164,11 +164,11 @@ const updateStudent = (data) => {
                    dataCollection.students[index] = data;
               }
 
-              // Resolve with a success message
-              Resolve("Successfully updated")
+              
+              Resolve("Successfully updated the student Information")
               
          }catch (err){
-              // Reject if there any error
+              
               Reject(err.message)
          }
     })
